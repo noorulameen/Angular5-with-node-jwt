@@ -1,0 +1,8 @@
+{
+  "hostname": "localhost",
+  "port": "3306",
+  "database": "todo",
+  "username": "root",
+  "password": "password",
+  "timezone": ""
+}
