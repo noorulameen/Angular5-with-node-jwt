@@ -39,7 +39,8 @@ var Users = {
 
     login: function (body,req) {
         var query = "select * from users where username='" + body.username + "' and password ='" + body.password + "'";
-
+    	console.log('aaaaaaaaaaaq',query);
+    	
         return Users.doLogin(query);
     },
 
