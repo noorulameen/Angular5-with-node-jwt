@@ -5,21 +5,29 @@ import { CreateComponent } from './create/create.component';
 import { EditComponent } from './edit/edit.component';
 import {HttpClientModule} from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
+import { LoginComponent } from './login/index';
+import { AuthGuard } from './_guards/index';
+
+
 
 
 
 
 
 const routes: Routes = [
+      { path: 'login', component: LoginComponent },
       { path: 'create', 
-        component: CreateComponent 
+        component: CreateComponent ,
+        canActivate:[AuthGuard]
       },
       {
         path: 'edit/:id',
-        component: EditComponent
+        component: EditComponent,
+        canActivate:[AuthGuard]
       },
       { path: 'index',
-        component: IndexComponent
+        component: IndexComponent,
+        canActivate:[AuthGuard]
       }
                         
   ];

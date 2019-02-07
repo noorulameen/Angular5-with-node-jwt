@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { HttpModule } from '@angular/http';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -9,6 +11,12 @@ import { CreateComponent } from './create/create.component';
 import { EditComponent } from './edit/edit.component';
 import { CoinService } from './coin.service';
 import { ReactiveFormsModule } from '@angular/forms';
+import { LoginComponent } from './login/login.component';
+
+import { AuthGuard } from './_guards/index';
+import { AuthenticationService, UserService } from './_services/index';
+import { FormsModule } from '@angular/forms';
+
 
 
 
@@ -18,13 +26,14 @@ import { ReactiveFormsModule } from '@angular/forms';
     AppComponent,
     IndexComponent,
     CreateComponent,
-    EditComponent
+    EditComponent,
+    LoginComponent
     ],
   imports: [
     BrowserModule,
-    AppRoutingModule,ReactiveFormsModule
+    AppRoutingModule,ReactiveFormsModule,HttpModule,FormsModule
   ],
-  providers: [CoinService],
+  providers: [CoinService,AuthGuard,AuthenticationService,UserService],
   bootstrap: [AppComponent]
 })
 

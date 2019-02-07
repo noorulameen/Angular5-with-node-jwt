@@ -17,6 +17,7 @@ export class CoinService {
         name: name,
         price: price
       };
+      
       this.http.post(uri, obj)
           .subscribe(res => console.log('Done'));
     }
@@ -33,11 +34,13 @@ export class CoinService {
     }
   
   editCoin(id) {
+      
       const uri = 'http://localhost:3000/todo/users/edit/' + id;
       return this
               .http
               .get(uri)
-              .map(res => {                  
+              .map(res => {  
+                  
                 return res.content[0];
               });
     }
