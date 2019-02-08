@@ -14,8 +14,8 @@ module.exports = function(app) {
             count++;
             var router = express.Router();
             require('./' + routeName)(router);
-           //app.use('/todo/'+routeName, isAuthenticated,  router);//isAuthenticated
-            app.use('/todo/'+routeName,  router);
+           app.use('/todo/'+routeName, isAuthenticated,  router);//isAuthenticated
+           // app.use('/todo/'+routeName,  router);
         });
     }).then(function ()
     {
