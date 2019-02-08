@@ -9,6 +9,7 @@ import { ActivatedRoute, Router } from '@angular/router';
   providedIn: 'root'
 })
 export class CoinService {
+    
 
   constructor(private http: HttpClient,private router: Router) { }
   addCoin(name, price) {
@@ -17,6 +18,7 @@ export class CoinService {
         name: name,
         price: price
       };
+      
       
       this.http.post(uri, obj)
           .subscribe(res => console.log('Done'));
@@ -58,6 +60,7 @@ export class CoinService {
         console.log('Done'));
       this.router.navigate(['/index']);
     }
+  
   
   deleteCoin(id) {
       const uri = 'http://localhost:3000/todo/users/delete/' + id;
