@@ -17,7 +17,7 @@ export class CoinService {
       const obj = {
         name: name,
         price: price
-      };
+      }; 
       
       
       this.http.post(uri, obj)
@@ -41,9 +41,8 @@ export class CoinService {
       return this
               .http
               .get(uri)
-              .map(res => {  
-                  
-                return res.content[0];
+              .map(res => {                    
+                return res;
               });
     }
   
