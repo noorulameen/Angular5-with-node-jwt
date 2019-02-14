@@ -8,6 +8,7 @@ module.exports = function(router) {
     }),
     
     router.route('/addcoin').post(function (req, res) {
+    	
         userController.addCoin(req, res);
     }),
     

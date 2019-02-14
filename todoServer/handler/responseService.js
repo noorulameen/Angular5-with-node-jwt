@@ -31,11 +31,12 @@ var response = {
             res.status(401).send(finalResponse);
         } else {
             finalResponse = {
-                status: 500,
+                status: 200,
+                success:false,
                 message:'something went wrong'
                 //message: err.message
             };
-            res.status(500).send(finalResponse);
+            res.status(200).send(finalResponse);
 
         }
 
