@@ -5,7 +5,8 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var bodyParser = require("body-parser");
-
+var io = require('@pm2/io');
+var cluster = require('cluster');
 //var indexRouter = require('./routes/index');
 //var usersRouter = require('./routes/users');
 
@@ -40,7 +41,7 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
-
+app.use(io.expressErrorHandler())
 
 app.use(bodyParser.json({limit:'20mb'}));
 
@@ -63,7 +64,7 @@ app.use(function(req, res, next) {
 app.disable('x-powered-by');
 mysqlConnection.init();
 require('./routes/index')(app);
-app.listen(app.get('port'));
+//app.listen(app.get('port'));
 
 
 process.on('uncaughtException', function(err) {
@@ -71,6 +72,36 @@ process.on('uncaughtException', function(err) {
     console.error(err.stack);
 });
 
-console.log("Application running on " + app.get('port'));
+if(cluster.isMaster) {
+    var numWorkers = require('os').cpus().length;
+
+    console.log('Master cluster setting up ' + numWorkers + ' workers...');
+
+    for(var i = 0; i < numWorkers; i++) {
+        cluster.fork();
+    }
+
+    cluster.on('online', function(worker) {
+        console.log('Worker ' + worker.process.pid + ' is online');
+    });
+
+    cluster.on('exit', function(worker, code, signal) {
+        console.log('Worker ' + worker.process.pid + ' died with code: ' + code + ', and signal: ' + signal);
+        console.log('Starting a new worker');
+        cluster.fork();
+    });
+
+} else {
+
+    var server = app.listen(app.get('port'), function() {
+        console.log('Process ' + process.pid + ' is listening to all incoming requests ' + app.get('port'));
+    });
+}
+
+
+
+
+
+//console.log("Application running on " + app.get('port'));
 
 //module.exports = app;

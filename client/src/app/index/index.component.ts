@@ -20,8 +20,8 @@ export class IndexComponent implements OnInit {
   
   getCoins() {
       this.service.getCoins().subscribe(res => {
-        this.coins = (res.content !==null && res.content !==undefined)? res.content: res;
-          //this.coins = res;
+         this.coins = (res.content !==null && res.content !== undefined)? res.content: res;
+        //  this.coins = res;
         console.log('test>>>>>',this.coins);
         
       });

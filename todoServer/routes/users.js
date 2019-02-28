@@ -29,6 +29,7 @@ module.exports = function(router) {
     }),
 
     router.route('/login').post(function (req, res) {
+    	console.log('Worker ' + process.pid + ' is online ameen');
         userController.login(req, res);
     }),
 

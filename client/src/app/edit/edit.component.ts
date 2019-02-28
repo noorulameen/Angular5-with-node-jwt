@@ -43,7 +43,7 @@ export class EditComponent implements OnInit {
     this.route.params.subscribe(params => {
       this.coin = this.service.editCoin(params['id']).subscribe(res => {
           
-        this.coin = (res.content[0])? res.content[0] : res;
+          this.coin = res.content[0];
         
       });
     });

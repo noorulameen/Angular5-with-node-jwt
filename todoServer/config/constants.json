@@ -1,4 +1,6 @@
 {
   "secreatetoken": "WO45@*!",
-  "expiresIn": "3600"
+  "secreaterefreshToken":"@#^hee)978",
+  "expiresIn": "3600",
+  "refreshexpiresIn":"4000"
 }

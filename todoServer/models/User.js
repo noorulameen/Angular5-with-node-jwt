@@ -4,6 +4,7 @@ var dbConfig = require('../config/dbConfig');
 var constants = require('../config/constants');
 
 var jwt = require('jsonwebtoken');
+var tokenList ={};
 
 var Users = {
     createTodo: function (body,req) {
@@ -125,14 +126,23 @@ var Users = {
                         }, constants.secreatetoken, {
                             expiresIn: parseInt(constants.expiresIn)
                         });
-
+                    //refresh token
+                    var refreshToken = jwt.sign({
+                        'id': result[0].id,
+                        'username': result[0].username
+                    }, constants.secreaterefreshToken, {
+                        expiresIn: parseInt(constants.refreshexpiresIn)
+                    });
+                    
+                    tokenList[refreshToken] = response
                     console.log('coming',token)
                     resolve({
                         status: 200,
                         success: true,
                         message: 'Login Successfully',
                         content: [{
-                            'token': token
+                            "token": token,
+                            "refreshToken": refreshToken,
                         }]
                     });
 
