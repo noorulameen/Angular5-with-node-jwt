@@ -7,19 +7,19 @@ var jwt = require('jsonwebtoken');
 var tokenList ={};
 
 var Users = {
-    createTodo: function (body,req) {
-    	//console.log(req.userDetails.id);
-        //body.userid = (req.userDetails.id)? req.userDetails.id : '1';
-        body.userid = 2;
+/*    createTodo: function (body,req) {
+    	console.log('req.userDetails.id',req.userDetails.id);
+        body.userid = (req.userDetails.id)? req.userDetails.id : '1';
+       //body.userid = 2;
 
         var query = "insert into usertodo set ?"
         return Users.doInsertUpdateProcess(query, body,req);
-    },
+    },*/
     
     createCoin: function (body,req) {
-    	//console.log(req.userDetails.id);
-        //body.userid = (req.userDetails.id)? req.userDetails.id : '1';
-        body.userid = 2;
+    	console.log('req.userDetails.id',req.userDetails.id);
+        body.userid = (req.userDetails.id)? req.userDetails.id : '1';
+        //body.userid = 2;
 
         var query = "insert into coin set ?"
         return Users.doInsertUpdateProcess(query, body,req);
@@ -31,7 +31,7 @@ var Users = {
     },
 
     deleteTodo: function (body,req) {
-        //body.userid = req.userDetails.id;
+        body.userid = req.userDetails.id;
         var query = "DELETE FROM coin where id='" + body.id + "'";
         console.log('query>>>',query)
 

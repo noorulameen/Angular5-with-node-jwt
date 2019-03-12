@@ -3,9 +3,9 @@ var userController = require('../controller/userController');
 /* GET users listing. */
 
 module.exports = function(router) {
-    router.route('/add').post(function (req, res) {
+    /*router.route('/add').post(function (req, res) {
         userController.addTodo(req, res);
-    }),
+    }),*/
     
     router.route('/addcoin').post(function (req, res) {
     	

@@ -64,7 +64,7 @@ app.use(function(req, res, next) {
 app.disable('x-powered-by');
 mysqlConnection.init();
 require('./routes/index')(app);
-//app.listen(app.get('port'));
+app.listen(app.get('port'));
 
 
 process.on('uncaughtException', function(err) {
@@ -72,7 +72,7 @@ process.on('uncaughtException', function(err) {
     console.error(err.stack);
 });
 
-if(cluster.isMaster) {
+/*if(cluster.isMaster) {
     var numWorkers = require('os').cpus().length;
 
     console.log('Master cluster setting up ' + numWorkers + ' workers...');
@@ -97,11 +97,11 @@ if(cluster.isMaster) {
         console.log('Process ' + process.pid + ' is listening to all incoming requests ' + app.get('port'));
     });
 }
+*/
 
 
 
 
+console.log("Application running on " + app.get('port'));
 
-//console.log("Application running on " + app.get('port'));
-
-//module.exports = app;
+module.exports = app;

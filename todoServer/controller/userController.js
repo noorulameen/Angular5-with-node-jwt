@@ -2,7 +2,7 @@ var responseServices = require('../handler/responseService');
 var userModel = require('../models/User');
 
 var todoUser = {
-    addTodo: function (req, res) {
+/*    addTodo: function (req, res) {
         return new Promise(function (resolve, reject) {
         	resolve(userModel.createTodo(req.body,req));
         }).then(function (response) {
@@ -15,7 +15,7 @@ var todoUser = {
             responseServices.validateAndSend(err, null, null, res);
         });
     },
-    
+    */
     addCoin: function (req, res) {
         return new Promise(function (resolve, reject) {
         	resolve(userModel.createCoin(req.body,req));

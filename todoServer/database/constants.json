@@ -1,32 +1,36 @@
 {
-  "USERROLES": {
-    "ADMIN": "A",
-    "USER": "U",
-    "FULLFILLMENT": "F",
-    "QC": "Q",
-    "SUPERADMIN": "SA"
-  },
-  "LEADSOURCE": {
-    "SELF": "S",
-    "ASSISTANCE": "A",
-    "MICROWEBSITE":"M",
-    "MICROWEBSITE_V3": "V3",
-    "US_INTERVIEW": "UI"
-  },
-  "RELATIONSHIP": {
-    "SELF": 1,
-    "MOTHER": 2,
-    "FATHER": 3,
-    "BROTHER": 4,
-    "SISTER": 5,
-    "FRIEND": 6
-  },
-  "VAssist_ASSISTANCE_SERVICE": "Expert Fee",
-  "VAssist_SERVICE_FEE":"Convenience Fee",
-  "VAssist_ASSISTANCE_SERVICE_ID": 7,
-  "VAssist_Travel_Insurance": "Travel Insurance",
-  "FINANCE_EMAIL_ID": ["finance@vassist.com"],
-  "FULLFILLMENT_EMAIL_ID": ["operations@vassist.com"],
-  "bookingmediumOnline":"Online",
-  "bookingmediumAssisted":"Assisted"
+	"USERROLES": {
+		"ADMIN": "A",
+		"USER": "U",
+		"FULLFILLMENT": "F",
+		"QC": "Q",
+		"SUPERADMIN": "SA"
+	},
+	"LEADSOURCE": {
+		"SELF": "S",
+		"ASSISTANCE": "A",
+		"MICROWEBSITE": "M",
+		"MICROWEBSITE_V3": "V3",
+		"US_INTERVIEW": "UI"
+	},
+	"RELATIONSHIP": {
+		"SELF": 1,
+		"MOTHER": 2,
+		"FATHER": 3,
+		"BROTHER": 4,
+		"SISTER": 5,
+		"FRIEND": 6
+	},
+	"VAssist_ASSISTANCE_SERVICE": "Expert Fee",
+	"VAssist_SERVICE_FEE": "Convenience Fee",
+	"VAssist_ASSISTANCE_SERVICE_ID": 7,
+	"VAssist_Travel_Insurance": "Travel Insurance",
+	"FINANCE_EMAIL_ID": [
+		"finance@vassist.com"
+	],
+	"FULLFILLMENT_EMAIL_ID": [
+		"operations@vassist.com"
+	],
+	"bookingmediumOnline": "Online",
+	"bookingmediumAssisted": "Assisted"
 }
