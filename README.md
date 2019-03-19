@@ -5,5 +5,3 @@ Here two appliction avaliable
 2.nodejs restapi using jwt token
 
 
-test
-
