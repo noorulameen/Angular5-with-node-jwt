@@ -6,6 +6,7 @@ var routes = require('require-dir')();
 var responseHandler = require('../handler/responseHandler');
 
 
+
 module.exports = function(app) {
     var count=0;
     new Promise( function(done,reject)
@@ -15,8 +16,8 @@ module.exports = function(app) {
             count++;
             var router = express.Router();
             require('./' + routeName)(router);
-           app.use('/todo/'+routeName, isAuthenticated,  router);//isAuthenticated
-           // app.use('/todo/'+routeName,  router);
+           //app.use('/todo/'+routeName, isAuthenticated,  router);//isAuthenticated
+           app.use('/todo/'+routeName,  router);
         });
     }).then(function ()
     {
