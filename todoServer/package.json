@@ -20,7 +20,8 @@
 		"mysql": "^2.16.0",
 		"nodemon": "^1.18.9",
 		"pug": "2.0.0-beta11",
-		"require-dir": "^1.2.0"
+		"require-dir": "^1.2.0",
+		 "superagent": ">=3.7.0"
 	},
 	"devDependencies": {
 		"chai": "^3.5.0",
