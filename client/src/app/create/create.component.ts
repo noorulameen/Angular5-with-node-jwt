@@ -24,11 +24,12 @@ export class CreateComponent implements OnInit {
     addCoin(name, price) {
       this.coinservice.addCoin(name, price);
           this.router.navigate(['index']);
-          location.reload();
+         // location.reload();
       
       
   }
   ngOnInit() {
+      
   }
 
 }

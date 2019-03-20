@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Router, CanActivate } from '@angular/router';
+
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'client';
+  log = (localStorage.getItem('currentUser'))? 'logout': 'login'
+  
 }

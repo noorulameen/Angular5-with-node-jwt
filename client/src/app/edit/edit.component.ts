@@ -33,7 +33,7 @@ export class EditComponent implements OnInit {
     this.route.params.subscribe(params => {
     this.service.updateCoin(name, price, params['id']);
     this.router.navigate(['/index']);
-    location.reload();
+    //location.reload();
   });
 }
   
@@ -42,8 +42,9 @@ export class EditComponent implements OnInit {
   ngOnInit() {
     this.route.params.subscribe(params => {
       this.coin = this.service.editCoin(params['id']).subscribe(res => {          
+
           this.coin = res.content[0];
-        
+       
       });
     });
   }
